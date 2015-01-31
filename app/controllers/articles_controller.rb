@@ -7,10 +7,12 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
+		@comment = Comment.new
+		@comment.article_id = @article_id
 	end
 
 	def new
-		@article = Article.new
+		@article = Article.new # so Rails can figure out which fields an article has
 	end
 
 	def create
